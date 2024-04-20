@@ -2,11 +2,12 @@
 title: Electron + Vue + Mdui
 sticky: 1
 tags:
-  - electron
+  - Electron
+  - Vue
 categories:
   - electron
 slug: electron-vue-mdui
-date: 2022-07-22 16:23:03
+date: 2022-07-22T16:23:03+08:00
 cover: /covers/electron-vue-mdui.svg
 gemini: true
 description: 将 Electron 集成到 Vue 项目中的指南

@@ -1,8 +1,8 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
-import { useData } from 'vitepress';
-import { getColorFromImage } from 'mdui/functions/getColorFromImage.js';
-import { setColorScheme } from 'mdui/functions/setColorScheme.js';
+import { ref, onMounted, watch } from "vue";
+import { useData } from "vitepress";
+import { getColorFromImage } from "mdui/functions/getColorFromImage.js";
+import { setColorScheme } from "mdui/functions/setColorScheme.js";
 
 import AppBar from "./components/AppBar.vue";
 import Banner from "./components/Banner.vue";
@@ -26,9 +26,12 @@ function applyColorSchemeFromImage(imageSrc) {
 }
 
 // 监视 frontmatter 中的 cover 属性
-watch(() => frontmatter.value.cover, (newCover) => {
-  applyColorSchemeFromImage(newCover);
-});
+watch(
+  () => frontmatter.value.cover,
+  (newCover) => {
+    applyColorSchemeFromImage(newCover);
+  }
+);
 
 // 组件挂载时尝试立即应用
 onMounted(() => {
@@ -42,6 +45,12 @@ onMounted(() => {
     <Banner />
     <div v-if="frontmatter.home">
       <div id="home-main"><PostList /></div>
+    </div>
+    <div v-if="frontmatter.article">
+      <Content id="main-content" />
+    </div>
+    <div v-if="frontmatter.categories">
+      <Content id="main-content" />
     </div>
     <NotFound v-else-if="page.isNotFound" />
     <div v-else>

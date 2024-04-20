@@ -4,7 +4,7 @@ import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "FloatSheep's Blog",
-  description: "Fish, Fish. Fish🐟",
+  description: "Fish, Fish, Fish🐟",
   markdown: {
     lineNumbers: false,
     image: {

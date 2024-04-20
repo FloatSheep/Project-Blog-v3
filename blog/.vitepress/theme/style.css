@@ -144,6 +144,7 @@
 html {
   font-family: Arial, Helvetica;
   /*   overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .appbar-name {
@@ -159,12 +160,9 @@ html {
   -o-transition: all 0.3s;
   -webkit-animation: fadeIn 0.6s 0.1s backwards;
 }
-#banner .title {
-  font-size: 2.75rem;
-}
 
 #banner {
-  height: 300px;
+  height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -205,10 +203,12 @@ html {
 }
 
 #home-main a,
-#AppBar a {
+#AppBar a,
+#main-content #article-container a {
   text-decoration: none;
   color: unset;
 }
+
 @keyframes fade-up {
   0% {
     opacity: 0;
@@ -252,7 +252,7 @@ html {
   animation: fade-up 0.6s 0.4s backwards;
   cursor: pointer;
   -webkit-animation: fade-up 0.6s 0.4s backwards;
-  width: 90vh;
+  width: 35vh;
 }
 
 #posts-list .posts-card .posts-title {
@@ -651,6 +651,87 @@ pre code {
 
 .shiki {
   background-color: transparent !important;
+}
+
+.posts-tags .tag-o {
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  flex-direction: row;
+}
+
+.posts-tags {
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  margin-right: 0.6rem;
+}
+
+#tagList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  opacity: 0.8;
+  margin-right: 20px;
+  overflow: hidden;
+}
+
+#AppBar .appbar-name {
+  display: flex;
+  justify-content: space-between; /* 确保元素分布在两侧 */
+  align-items: center;
+}
+
+#AppBar .appbar-text {
+  display: none;
+}
+
+#link-btn {
+  position: relative;
+}
+
+.link-btn {
+  z-index: 10; /* 设置较大的z-index确保在上层 */
+}
+
+.link-child {
+  position: absolute;
+  top: 40px; /* 或根据需要调整，使其位于.appbar-text下方 */
+  left: -155%;
+  transform: translateX(-50%) translateY(-10px) scale(0.8); /* 使用translateX(-50%)来向左偏移元素宽度的50%，实现居中 */
+  width: 50%; /* 设置元素宽度为页面宽度的50% */
+  opacity: 0;
+  pointer-events: none; /* 默认不接收鼠标事件 */
+  transition: opacity 0.3s, transform 0.3s; /* 平滑过渡效果 */
+  box-sizing: border-box; /* 确保宽度的计算包括任何边框和内边距 */
+}
+
+.appbar-text:hover .link-child {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto; /* 当元素可见时接收鼠标事件 */
+}
+
+@media (min-width: 600px) {
+  #banner .title {
+    font-size: 2.75rem;
+  }
+
+  #posts-list .posts-card {
+    padding: 1.6rem 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    animation: fade-up 0.6s 0.4s backwards;
+    cursor: pointer;
+    -webkit-animation: fade-up 0.6s 0.4s backwards;
+    width: 60vh;
+  }
+
+  #AppBar .appbar-text {
+    position: absolute;
+    display: unset !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes fade-up-opacity {
