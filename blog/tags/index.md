@@ -1,5 +1,5 @@
 ---
 title: Tags
-tags: true
+pages: true
 ---
 <Tags />

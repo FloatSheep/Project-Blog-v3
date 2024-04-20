@@ -46,10 +46,7 @@ onMounted(() => {
     <div v-if="frontmatter.home">
       <div id="home-main"><PostList /></div>
     </div>
-    <div v-if="frontmatter.article">
-      <Content id="main-content" />
-    </div>
-    <div v-if="frontmatter.categories">
+    <div v-else-if="frontmatter.pages">
       <Content id="main-content" />
     </div>
     <NotFound v-else-if="page.isNotFound" />

@@ -1,5 +1,5 @@
 ---
 title: Article
-article: true
+pages: true
 ---
 <Article />

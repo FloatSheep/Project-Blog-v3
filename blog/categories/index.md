@@ -1,5 +1,5 @@
 ---
 title: Categories
-categories: true
+pages: true
 ---
 <Categories />
